@@ -1,9 +1,25 @@
 {
   "name": "pi-error-retry",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "description": "按规则无限重试 Pi 模型错误，并在长度截断时自动继续",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/librola/pi-error-retry.git"
+  },
+  "homepage": "https://github.com/librola/pi-error-retry#readme",
+  "bugs": {
+    "url": "https://github.com/librola/pi-error-retry/issues"
+  },
+  "files": [
+    "index.ts",
+    "src/",
+    "examples/"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "keywords": [
     "pi-package"
   ],

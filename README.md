@@ -23,16 +23,22 @@ Pi 自带的有限错误重试先行；它耗尽后，本扩展接管匹配错�
 
 ## 安装
 
-本地包无需编译：
+从 npm 安装：
 
 ```sh
-pi install /home/i-hankeke/projects/pi-error-retry
+pi install npm:pi-error-retry
 ```
 
-在现有 Pi 会话中执行 `/reload`；新会话自动加载。也可临时加载：
+也可直接从 GitHub 安装：
 
 ```sh
-pi -e /home/i-hankeke/projects/pi-error-retry/index.ts
+pi install git:github.com/librola/pi-error-retry
+```
+
+在现有 Pi 会话中执行 `/reload`；新会话自动加载。克隆后的本地源码无需编译，也可临时加载：
+
+```sh
+pi -e ./pi-error-retry/index.ts
 ```
 
 安装声明位于 `~/.pi/agent/settings.json` 的 `packages` 数组。本扩展只注册事件和用户命令，没有新增模型可调用的配置工具。
@@ -86,7 +92,7 @@ Pi 原生编辑器适用于 TUI 和支持该对话协议的 RPC 客户端；不�
 1. `Requests have exceeded the throughput limit on your Provisioned-Managed deployment. If you continue to exceed your limit, consider increasing the number of provisioned throughput units deployed.`
 2. `Your request exceeds the maximum size allowed by your deployment's quota.`
 
-`examples/error-retry.json` 是此次从本机 DSH web profile 的持久配置迁移的 10 条规则，已写入本机用户配置；扩展默认列表仍保持上述两条。
+`examples/error-retry.json` 提供从 DSH 配置迁移的 10 条示例规则；按需复制到用户配置文件使用。安装不会自动用示例覆盖你的配置，扩展默认列表仍保持上述两条。
 
 ## 等待、日志和范围
 
@@ -108,7 +114,7 @@ Pi 原生编辑器适用于 TUI 和支持该对话协议的 RPC 客户端；不�
 
 ```sh
 npm install --ignore-scripts --legacy-peer-deps
-export PI_TEST_PACKAGE=/home/i-hankeke/.npm-global/lib/node_modules/@agegr/pi-web/node_modules/@earendil-works/pi-coding-agent/package.json
+export PI_TEST_PACKAGE=/path/to/pi-coding-agent/package.json
 npm run check
 npm test
 ```
