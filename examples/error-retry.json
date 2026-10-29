@@ -1,0 +1,45 @@
+{
+  "rules": [
+    {
+      "mode": "contains",
+      "pattern": "Requests have exceeded the throughput limit on your Provisioned-Managed deployment. If you continue to exceed your limit, consider increasing the number of provisioned throughput units deployed."
+    },
+    {
+      "mode": "contains",
+      "pattern": "Your request exceeds the maximum size allowed by your deployment's quota."
+    },
+    {
+      "mode": "contains",
+      "pattern": "No available PLB channels. Is the PLB down"
+    },
+    {
+      "mode": "contains",
+      "pattern": "has been reached: 600000 tokens per 60 seconds."
+    },
+    {
+      "mode": "contains",
+      "pattern": "The model was unable to complete inference due to an internal error."
+    },
+    {
+      "mode": "regex",
+      "pattern": "Models Proxy:\\s*The\\s+(?:[A-Za-z][A-Za-z-]*\\s+){0,4}limit for model\\s+\\\\?\"[^\"\\r\\n]+\\\\?\"\\s+has been reached:\\s*\\d+(?:\\.\\d+)?\\s+tokens per\\s+\\d+(?:\\.\\d+)?\\s+seconds?\\.\\s*Please retry after\\s+\\d+(?:\\.\\d+)?\\s+seconds?\\.",
+      "flags": "i"
+    },
+    {
+      "mode": "contains",
+      "pattern": "Models Proxy: 502 Bad Gateway"
+    },
+    {
+      "mode": "contains",
+      "pattern": "pi-ai stream idle timeout after 300000ms"
+    },
+    {
+      "mode": "contains",
+      "pattern": "Quota service is temporarily unavailable."
+    },
+    {
+      "mode": "contains",
+      "pattern": "Upstream service unavailable"
+    }
+  ]
+}
